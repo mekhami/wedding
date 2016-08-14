@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <form action="{% url 'rsvp:create' %}" method="POST">
+                {{ form.non_field_errors }}
+                {% csrf_token %}
+                <div class="form-group row">
+                    {{ form.name.errors }}
+                    <div class="col-md-3">
+                        <label for="{{ form.name.id_for_label }}" class="col-form-label">{{ form.name.label }}:</label> 
+                    </div>
+                    <div class="col-md-9">{% render_field form.name class+="form-control" %}</div>
+                </div>
+                <div class="form-group row">
+                    {{ form.email.errors }}
+                    <div class="col-md-3">
+                        <label for="{{ form.email.id_for_label }}" class="col-form-label">{{ form.email.label }}:</label> 
+                    </div>
+                    <div class="col-md-9">{% render_field form.email class+="form-control" %}</div>
+                </div>
+                <div class="form-group row">
+                    {{ form.attending.errors }}
+                    <div class="col-md-3">{{ form.attending.label }}:</div>
+                    <div class="col-md-9">
+                    {% for radio in form.attending %}
+                        <label class="form-check-inline" id="{{ radio.label_for_id }}">
+                            {{ radio.tag }} {{ radio.choice_label }}
+                        </label>
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    {{ form.guests.errors }}
+                    <div class="col-md-3">
+                        <label for="{{ form.guests.id_for_label }}" class="col-form-label">{{ form.guests.label }}:</label>
+                    </div> 
+                    <div class="col-md-9">{% render_field form.guests class+="form-control" %}</div>
+                </div>
+                <div class="form-group row">
+                    {{ form.address1.errors }}
+                    <div class="col-md-3">
+                        <label for="{{ form.address1.id_for_label }}" class="col-form-label">Address:</label> 
+                    </div> 
+                    <div class="col-md-9">{% render_field form.address1 class+="form-control" %}</div>
+                </div>
+                <div class="form-group row">
+                    {{ form.address2.errors }}
+                    <div class="col-md-3">
+                        <label for="{{ form.address2.id_for_label }}" class="col-form-label">Address 2:</label>
+                    </div>
+                    <div class="col-md-9">{% render_field form.address2 class+="form-control" %}</div>
+                </div>
+                <div class="form-group row">
+                    {{ form.city.errors }}
+                    <div class="col-md-3">
+                        <label for="{{ form.city.id_for_label }}" class="col-form-label">{{ form.city.label }}:</label>
+                    </div>
+                    <div class="col-md-9">{% render_field form.city class+="form-control" %}</div>
+                </div>
+                <div class="form-group row">
+                    {{ form.state.errors }}
+                    <div class="col-md-3">
+                        <label for="{{ form.state.id_for_label }}" class="col-form-label">{{ form.state.label }}:</label>
+                    </div> 
+                    <div class="col-md-9">{% render_field form.state class+="form-control" %}</div>
+                </div>
+                <div class="form-group row">
+                    {{ form.zip_code.errors }}
+                    <div class="col-md-3">
+                        <label for="{{ form.zip_code.id_for_label }}" class="col-form-label">{{ form.zip_code.label }}:</label>
+                    </div> 
+                    <div class="col-md-9">{% render_field form.zip_code class+="form-control" %}</div>
+                </div>
+                <div class="form-group row">
+                    {{ form.song_request.errors }}
+                    <div class="col-md-3"><label for="{{ form.song_request.id_for_label }}" class="col-form-label">Song Request:</label>
+                    </div>
+                    <div class="col-md-9">{% render_field form.song_request class+="form-control" %}</div>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit" value="Submit"/>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
