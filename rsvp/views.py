@@ -21,7 +21,9 @@ class RSVPCreateView(CreateView):
         to = (form.cleaned_data['email'],)
         if attending:
             subject = 'Thanks for RSVPing!'
-            body = 'Attending Body'
+            body = 'Thanks for RSVPing to our wedding! We\'ll send more information soon regarding \
+                    accomodations, locations, menu, and more. If you have any questions, feel free to send \
+                    us an email or give us a call!'
             email = EmailMessage(subject, body, from_email, to)
             email.send()
         else:
