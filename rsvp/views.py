@@ -26,6 +26,11 @@ class RSVPCreateView(CreateView):
                     us an email or give us a call!'
             email = EmailMessage(subject, body, from_email, to)
             email.send()
+
+            subject = '{} has RSVP\'d!'.format(form.cleaned_data['name'])
+            body = '{} has RSVP\'d with {} guest(s)'.format(form.cleaned_data['name'], form.cleaned_data['guests'])
+            email = EmailMessage(subject, body, from_email, 'thevanderpod@gmail.com')
+            email.send()
         else:
             pass
         return HttpResponseRedirect(reverse_lazy('rsvp:thanks'))
