@@ -29,7 +29,7 @@ class RSVPCreateView(CreateView):
 
             subject = '{} has RSVP\'d!'.format(form.cleaned_data['name'])
             body = '{} has RSVP\'d with {} guest(s)'.format(form.cleaned_data['name'], form.cleaned_data['guests'])
-            email = EmailMessage(subject, body, from_email, 'thevanderpod@gmail.com')
+            email = EmailMessage(subject, body, from_email, ('thevanderpod@gmail.com',))
             email.send()
         else:
             pass
