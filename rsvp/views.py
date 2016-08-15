@@ -16,6 +16,7 @@ class RSVPCreateView(CreateView):
     form_class = RSVPForm
 
     def form_valid(self, form):
+        form.save()
         attending = form.cleaned_data['attending']
         from_email = settings.EMAIL_HOST_USER
         to = (form.cleaned_data['email'],)
