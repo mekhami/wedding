@@ -36,6 +36,20 @@
 [hidden][style="display: block;"] {
   display: block !important;
 }
-.container {
-    margin-top: 50px;
+body {
+    padding-top: 120px;
+}
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+    float:none;
+    font-size: 40px;
+}
+.header-container {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
 }
