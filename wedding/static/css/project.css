@@ -53,3 +53,8 @@ body {
     text-align: center;
     font-family: 'Pacifico', cursive;
 }
+@media (max-width: 600px) {
+    .navbar-brand {
+        font-size: 32px; 
+    }
+}
