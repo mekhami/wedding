@@ -34,7 +34,7 @@
                 <div class="form-group row">
                     {{ form.guests.errors }}
                     <div class="col-md-3">
-                        <label for="{{ form.guests.id_for_label }}" class="col-form-label">{{ form.guests.label }}:</label>
+                        <label for="{{ form.guests.id_for_label }}" class="col-form-label">{{ form.guests.label }} (including yourself!):</label>
                     </div> 
                     <div class="col-md-9">{% render_field form.guests class+="form-control" %}</div>
                 </div>
