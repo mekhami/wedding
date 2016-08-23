@@ -6,5 +6,8 @@ app = celery.Celery('tasks', broker=os.environ.get('REDIS_URL'), backend=os.envi
 
 
 @app.task
-def add(x, y):
-    return x + y
+def send_not_attending_notification(name):
+    subject = '{} is not attending'.format(name)
+    body = '{} has RSVPd and they will not be attending'.format(name)
+    email = EmailMessage(subject, body, FROM_EMAIL, ('thevanderpod@gmail.com',))
+    email.send()
