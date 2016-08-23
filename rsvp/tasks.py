@@ -17,6 +17,7 @@ def send_not_attending_notification(name):
     email.send()
 
 
+@app.task
 def send_guest_email(email_address):
     subject = 'Thanks for RSVPing!'
     body = 'Thanks for RSVPing to our wedding! We\'ll send more information soon regarding \
@@ -26,6 +27,7 @@ def send_guest_email(email_address):
     email.send()
 
 
+@app.task
 def send_notification(name, guests):
     subject = '{} has RSVP\'d!'.format(name)
     body = '{} has RSVP\'d with {} guest(s)'.format(name, guests)
