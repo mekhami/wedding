@@ -20,6 +20,9 @@ django-storages-redux==1.3.2
 django-anymail==0.4.2
 
 
+redis-py
+celery
+
 
 # Opbeat agent for performance monitoring
 # -----------------------------------------
