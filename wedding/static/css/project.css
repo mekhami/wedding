@@ -37,24 +37,109 @@
   display: block !important;
 }
 body {
-    padding-top: 120px;
+    padding-top: 84px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: whitesmoke;
 }
-.navbar-header {
-    float: left;
-    padding: 15px;
-    text-align: center;
-    width: 100%;
+body h1 {
+    font-family: 'Poiret One', cursive;
 }
-.navbar-brand {
-    float:none;
+.navbar {
+    background: #009999;
+}
+.navbar-dark .navbar-brand {
+    color: white;
     font-size: 40px;
+    font-family: 'Pacifico', cursive;
+    margin-right: 1em;
+}
+.nav-menu {
+    list-style: none;
 }
 .header-container {
-    text-align: center;
     font-family: 'Pacifico', cursive;
 }
 @media (max-width: 600px) {
     .navbar-brand {
         font-size: 32px; 
     }
+}
+li.nav-item {
+    line-height: 52px;
+    font-size: 1.4em;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    margin-right: 10px;
+}
+li.nav-item:hover {
+    border-bottom: 2px solid white;
+}
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-right: 0;
+    padding-left: 0;
+}
+#hotel .row {
+    height: 500px;
+}
+
+.text-wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.text-wrapper p {
+    line-height: 2em;
+    font-size: 1.1rem;
+}
+.text-wrapper h1 {
+    margin-bottom: 20px;
+}
+#registries {
+    padding-top: 60px;
+}
+.registry-card {
+    padding-left: 15px;
+    padding-right: 15px;
+    height: auto;
+    width: 100%;
+}
+.registry-card img {
+    width: 200px;
+    height: 200px;
+}
+footer {
+    margin-top: 100px;
+    background: #009999;
+    color: white;
+    height: 100px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.registry-container {
+    margin-top: 100px;
+}
+form {
+    padding-top: 40px;
+}
+.venue-blurb {
+    background-color: #C60000;
+    color: whitesmoke;
+}
+.hotel-blurb {
+    background-color: #FFAA00;
 }
